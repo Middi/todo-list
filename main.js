@@ -14,3 +14,8 @@ function changeTodo(id, newValue) {
 	todos[id]  = newValue;
 	displayTodos();
 }
+
+function deleteTodo(id) {
+	todos.splice(id, 1);
+	displayTodos();
+}
