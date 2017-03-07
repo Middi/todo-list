@@ -3,16 +3,49 @@
 
 <head>
     <title>Todo List</title>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
+
     <h1>Todo List</h1>
 
-    <button onclick="handlers.displayTodos()">Display Todos</button>
-    <button onclick="handlers.toggleAll()">Toggle All</button>
+    <div>
+        <button onclick="handlers.displayTodos()">Display Todos</button>
+
+        <button onclick="handlers.toggleAll()">Toggle All</button>
+    </div>
+
+    <div>
+        <input id="addTodoTextInput" type="text" placeholder="New Todo" />
+
+        <button onclick="handlers.addTodo()">Add</button>
+    </div>
+
+    <div>
+        <input id="changeTodoPositionInput" type="number" />
+
+        <input id="changeTodoTextInput" type="text" />
+
+        <button onclick="handlers.changeTodo()">Change Todo</button>
+    </div>
+
+    <div>
+        <input id="deleteTodoPositionInput" type="number" />
+
+        <button onclick="handlers.deleteTodo()">Delete</button>
+    </div>
+
+    <div>
+        <input id="toggleCompletedPositionInput" type="number" />
+
+        <button onclick="handlers.toggleCompleted()">Toggle Completed</button>
+    </div>
+
 
     <script src="js/main.js"></script>
 </body>
