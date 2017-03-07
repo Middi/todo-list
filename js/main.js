@@ -1,5 +1,9 @@
 var todoList = {
+	
+	//Todos array
 	todos: [],
+	
+	// Display list of Todos
 	displayTodos: function () {
 		if (this.todos.length === 0) {
 			console.log('List empty');
@@ -19,6 +23,7 @@ var todoList = {
 			}
 		}
 	},
+
 	
 	// Add a todo to list
 	addTodo: function (todoText) {
