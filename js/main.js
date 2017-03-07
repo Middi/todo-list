@@ -1,51 +1,28 @@
 var todoList = {
 	todos: [],
 
-	// Display list of Todos
-	displayTodos: function () {
-
-		if (this.todos.length === 0) {
-			console.log('List empty');
-		} else {
-			console.log('My todos:');
-			for (var i = 0; i < this.todos.length; i++) {
-
-				// Add completedTodos notification
-				if (this.todos[i].completed === true) {
-					console.log('(x)', this.todos[i].todoText);
-				} else {
-					console.log('( )', this.todos[i].todoText);
-				}
-			}
-		}
-	},
-
 	// Add a todo to list
 	addTodo: function (todoText) {
 		this.todos.push({
 			todoText: todoText,
 			completed: false
 		});
-		this.displayTodos();
 	},
 
 	// Edit a todo
 	changeTodo: function (id, todoText) {
 		this.todos[id].todoText = todoText;
-		this.displayTodos();
 	},
 
 	// Delete a todo
 	deleteTodo: function (id) {
 		this.todos.splice(id, 1);
-		this.displayTodos();
 	},
 
 	// Toggle completed todo status
 	toggleCompleted: function (id) {
 		var todo = this.todos[id];
 		todo.completed = !todo.completed;
-		this.displayTodos();
 	},
 
 	// toggle all todos completed status
@@ -70,16 +47,11 @@ var todoList = {
 				this.todos[i].completed = true;
 			}
 		}
-		this.displayTodos();
 	}
 };
 
 // Get DOM elements
 var handlers = {
-
-	displayTodos: function () {
-		todoList.displayTodos();
-	},
 
 	// Get addTodo from DOM
 	addTodo: function () {
@@ -88,6 +60,8 @@ var handlers = {
 
 		// Clear text input after submit
 		addTodoTextInput.value = '';
+		// Display todos
+		view.displayTodos();
 	},
 
 	// Get changeTodo from DOM
@@ -99,6 +73,8 @@ var handlers = {
 		// Clear text input after submit
 		changeTodoPositionInput.value = '';
 		changeTodoTextInput.value = '';
+		// Display todos
+		view.displayTodos();
 	},
 
 	// Get deleteTodo from DOM
@@ -108,6 +84,8 @@ var handlers = {
 
 		// Clear text input after submit
 		deleteTodoPositionInput.value = '';
+		// Display todos
+		view.displayTodos();
 	},
 
 	// Get toggleCompleted from DOM
@@ -117,10 +95,14 @@ var handlers = {
 
 		// Clear text input after submit
 		toggleCompletedPositionInput.value = '';
+		// Display todos
+		view.displayTodos();
 	},
 
 	toggleAll: function () {
 		todoList.toggleAll();
+		// Display todos
+		view.displayTodos();
 	}
 };
 
@@ -133,9 +115,22 @@ var view = {
 		for (var i = 0; i < todoList.todos.length; i++) {
 
 			var todoLi = document.createElement('li');
-			todoLi.textContent = todoList.todos[i].todoText;
 
-			// add todo to UL element
+			// Check for completion
+			var todo = todoList.todos[i];
+			var todoListWithCompletion = '';
+
+			// If complete
+			if (todo.completed === true) {
+
+				todoListWithCompletion = '(x) ' + todo.todoText;
+				// If not complete
+			} else {
+				todoListWithCompletion = '( ) ' + todo.todoText;
+			}
+
+			// Add todo list with completion status to li and ad to ul
+			todoLi.textContent = todoListWithCompletion;
 			todosUl.appendChild(todoLi);
 		}
 	}
