@@ -9,7 +9,9 @@ i {
     margin: 0;
     padding: 0;
     background-color: inherit;
-    border: 0.5px solid $close;
+    border: none;
+    border-top: 0.5px solid $close;
+    border-bottom: 0.5px solid $close;
     float: left;
 }
 
@@ -17,6 +19,7 @@ i {
     height: 40px;
     padding: 0;
     margin: 10px 0;
+    display: flex;
 }
 
 #addTodoTextInput {
@@ -24,21 +27,30 @@ i {
     height: 40px;
     margin: 0;
     padding: 14px;
+    border: 0.5px solid $close;
     font-size: 1.2em;
     font-family: "Open Sans";
     font-weight: 400;
     color: $brand;
     float: left;
+    flex-shrink: 1; 
 }
 
 #add-button {
     height: 40px;
-    width: 40px;
+    width: 42px;
     margin: 0;
     padding: 0;
     background-color: inherit;
-    border: 0.5px solid $close;
+    border: none;
+    border-top: 0.5px solid $close;
+    border-bottom: 0.5px solid $close;
     float: right;
+    transition: all 0.4s ease;
+
+    &:hover {
+        background-color: darken($white, 5%);
+    }
 }
 
 li {
@@ -46,7 +58,8 @@ li {
     width: 100%;
     padding-left: 50px;
     background-color: white;
-    border: 0.5px solid $close;
+    border-top: 0.5px solid $close;
+    border-bottom: 0.5px solid $close;
     font-size: 1.2em;
     font-family: "Open Sans";
     font-weight: 400;
@@ -56,6 +69,21 @@ li {
     clear: both;
 }
 
+.editButton {    
+    height: 39px;
+    width: 40px;
+    background-color: rgba( $white, 0);
+    border: none;
+    border-left: 0.5px solid $close;
+    float: right;
+    z-index: 1;
+    transition: all 0.4s ease;
+
+    &:hover {
+        background-color: darken($white, 5%);
+    }
+}
+
 .deleteButton {
     height: 39px;
     width: 40px;
@@ -63,11 +91,24 @@ li {
     border: none;
     border-left: 0.5px solid $close;
     float: right;
+    transition: all 0.4s ease;
+
+    &:hover {
+        background-color: darken($white, 5%);
+    }
 }
 
+.todos {
+    margin-bottom: 40px;
+}
 
+#changeTodoPositionInput {
+    width: 40px;
+}
 
-input:focus {
+input:focus,
+input[type]:focus,
+textarea:focus {
     outline: none;
-    border: 2px solid $brand;
+    border: 1px solid $brand !important;
 }

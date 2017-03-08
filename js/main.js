@@ -131,8 +131,15 @@ var view = {
 			// 			// Add todo list with completion status to li and ad to ul
 			todoLi.textContent = todoListWithCompletion;
 			todoLi.appendChild(this.createDeleteButton());
+			todoLi.appendChild(this.createEditButton());
 			todosUl.appendChild(todoLi);
 		}, this);
+	},
+	createEditButton: function () {
+		var editButton = document.createElement('button');
+		editButton.innerHTML = 'Edit';
+		editButton.className = 'editButton';
+		return editButton;
 	},
 
 	createDeleteButton: function () {
@@ -153,6 +160,10 @@ var view = {
 
 			if (elementClicked.className === 'deleteButton' || 'fa-times') {
 				handlers.deleteTodo(parseInt(elementClicked.parentNode.id));
+			}
+
+			if (elementClicked.className === 'editButton') {
+				handlers.changeTodo(parseInt(elementClicked.parentNode.id), "new text");
 			}
 		});
 	}
