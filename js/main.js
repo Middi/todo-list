@@ -30,23 +30,25 @@ var todoList = {
 		var totalTodos = this.todos.length;
 		var completedTodos = 0;
 
-		// get number of completed todos
-		for (var i = 0; i < totalTodos; i++) {
-			if (this.todos[i].completed === true) {
+		// get number of completed todos	
+		this.todos.forEach(function (todo) {
+			if (todo.completed === true) {
 				completedTodos++;
 			}
-		}
+		});
 
-		// if everything is true , make everything false.
-		if (completedTodos === totalTodos) {
-			for (var i = 0; i < totalTodos; i++) {
-				this.todos[i].completed = false;
+		this.todos.forEach(function (todo) {
+
+			//case 1 if everything is true , make everything false.
+			if (completedTodos === totalTodos) {
+				todo.completed = false;
 			}
-		} else {
-			for (var i = 0; i < totalTodos; i++) {
-				this.todos[i].completed = true;
+
+			//case 2 Otherwise make it true.
+			else {
+				todo.completed = true;
 			}
-		}
+		});
 	}
 };
 
@@ -78,12 +80,8 @@ var handlers = {
 	},
 
 	// Get deleteTodo from DOM
-	deleteTodo: function () {
-		var deleteTodoPositionInput = document.getElementById('deleteTodoPositionInput');
-		todoList.deleteTodo(deleteTodoPositionInput.valueAsNumber);
-
-		// Clear text input after submit
-		deleteTodoPositionInput.value = '';
+	deleteTodo: function (position) {
+		todoList.deleteTodo(position);
 		// Display todos
 		view.displayTodos();
 	},
@@ -112,26 +110,51 @@ var view = {
 		var todosUl = document.querySelector('ul');
 		todosUl.innerHTML = '';
 
-		for (var i = 0; i < todoList.todos.length; i++) {
-
+		todoList.todos.forEach(function (todo, position) {
 			var todoLi = document.createElement('li');
 
-			// Check for completion
-			var todo = todoList.todos[i];
+			// 			// Check for completion
 			var todoListWithCompletion = '';
 
-			// If complete
+			// 			// If complete
 			if (todo.completed === true) {
 
 				todoListWithCompletion = '(x) ' + todo.todoText;
-				// If not complete
+				// 				// If not complete
 			} else {
 				todoListWithCompletion = '( ) ' + todo.todoText;
 			}
 
-			// Add todo list with completion status to li and ad to ul
+			// 			// set an id for each todo li
+			todoLi.id = position;
+
+			// 			// Add todo list with completion status to li and ad to ul
 			todoLi.textContent = todoListWithCompletion;
+			todoLi.appendChild(this.createDeleteButton());
 			todosUl.appendChild(todoLi);
-		}
+		}, this);
+	},
+
+	createDeleteButton: function () {
+		var deleteButton = document.createElement('button');
+		deleteButton.textContent = 'Delete';
+		deleteButton.className = 'deleteButton';
+		return deleteButton;
+	},
+	setUpEventListeners: function () {
+
+		var todosUl = document.querySelector('ul');
+
+		todosUl.addEventListener('click', function (event) {
+			// Get element that was clicked on
+
+			var elementClicked = event.target;
+
+			if (elementClicked.className === 'deleteButton') {
+				handlers.deleteTodo(parseInt(elementClicked.parentNode.id));
+			}
+		});
 	}
 };
+
+view.setUpEventListeners();
