@@ -1,3 +1,72 @@
-body {
-    width: 100%;
+@import "normalise";
+@import "colors";
+@import "typography";
+@import "buttons";
+
+header {
+    height             : 56px;
+    width              : 100%;
+    background         : $blue500;
+    border-bottom      : 1px solid #bbb;
+    box-shadow         : 0 2px 6px -4px #999;
+    position           : fixed;
+    top                : 0;
+    z-index            : 10;
 }
+
+nav {
+    max-width          : 920px;
+    height             : 56px;
+    margin             : 0 auto;
+    padding            : 0 26px;
+    display            : flex;
+    justify-content    : center;
+}
+
+
+.logo { align-self: center; }
+
+// --- CONTENT AREA --- //
+main {
+    min-height         : 100vh;
+    margin-bottom      : -62px;
+    background-color: $background;
+}
+
+main:after {
+    display            : block;
+}
+
+.container  {
+    width: 920px;
+    height: 100vh;
+    margin: 60px auto;
+    padding: 50px;
+    background-color: $white;
+    text-align: center;
+}
+
+
+
+
+
+// --- FOOTER --- //
+footer,
+main:after {
+    height             : 32px;
+}
+
+footer {
+    background         : $footer;
+    display            : table;
+    width              : 100%;
+    text-align         : center;
+}
+
+.built {
+    display            : table-cell;
+    vertical-align     : middle;
+    color: $close;
+}
+
+@import "media-queries";
