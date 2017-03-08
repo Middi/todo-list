@@ -233,7 +233,7 @@ main:after {
   max-width: 920px;
   height: 100vh;
   margin: 60px auto;
-  padding: 50px;
+  padding: 50px 0;
   text-align: center; }
 
 #todo-section {
@@ -266,12 +266,6 @@ footer {
 
 /* ----- MEDIA QUERIES ------ */
 /* -- BREAK 1 -- */
-@media only screen and (max-width: 706px) {
-  .container {
-    margin: 50px auto;
-    padding: 0; } }
-
-/* -- BREAK 2 -- */
 @media only screen and (max-width: 600px) {
   #todo-section {
     width: 100%;
