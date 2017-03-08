@@ -4,6 +4,11 @@
 @import "buttons";
 @import "forms";
 
+body {
+
+    background-color: $background;
+}
+
 header {
     height             : 56px;
     width              : 100%;
@@ -39,12 +44,13 @@ main:after {
 }
 
 .container  {
-    width: 920px;
+    max-width: 920px;
     height: 100vh;
     margin: 60px auto;
     padding: 50px;
     text-align: center;
 }
+
 
 section {
     margin: 0 auto;
@@ -52,9 +58,10 @@ section {
     width: 600px;
     padding: 30px 0;
     background-color: $white;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 $shadow, 0 6px 16px 0 $shadow;
 }
-
-
 
 
 // --- FOOTER --- //

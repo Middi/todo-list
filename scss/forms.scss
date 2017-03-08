@@ -1,8 +1,9 @@
 // FONTAWESOME STYLES
+i {
+    color: $black;
+}
 
-i {color: $black;}
-
-.toggle-all {    
+.toggle-all {
     height: 40px;
     width: 40px;
     margin: 0;
@@ -19,10 +20,14 @@ i {color: $black;}
 }
 
 #addTodoTextInput {
-    width: 520px;
+    width: 518px;
     height: 40px;
     margin: 0;
-    padding: 10px;
+    padding: 14px;
+    font-size: 1.2em;
+    font-family: "Open Sans";
+    font-weight: 400;
+    color: $brand;
     float: left;
 }
 
@@ -36,8 +41,33 @@ i {color: $black;}
     float: right;
 }
 
-// EDIT BUTTON
+li {
+    height: 40px;
+    width: 100%;
+    padding-left: 50px;
+    background-color: white;
+    border: 0.5px solid $close;
+    font-size: 1.2em;
+    font-family: "Open Sans";
+    font-weight: 400;
+    margin: 6px 0;
+    line-height: 40px;
+    text-align: left;
+    clear: both;
+}
 
-.edit {
-    
+.deleteButton {
+    height: 39px;
+    width: 40px;
+    background-color: rgba( $white, 0);
+    border: none;
+    border-left: 0.5px solid $close;
+    float: right;
+}
+
+
+
+input:focus {
+    outline: none;
+    border: 2px solid $brand;
 }

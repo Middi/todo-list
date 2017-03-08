@@ -59,11 +59,14 @@ h1 {
     font-weight: 700; }
 
 h2 {
-  font-size: 1.2em;
+  font-size: 1.5em;
   font-family: "Open Sans";
-  font-weight: 400;
+  font-weight: 200;
   color: #1f1f1f;
-  padding: 8px 0 2px; }
+  padding-bottom: 20px; }
+  h2 span {
+    color: #1f1f1f;
+    font-weight: 700; }
 
 a {
   font-size: 1em; }
@@ -103,10 +106,14 @@ i {
   margin: 10px 0; }
 
 #addTodoTextInput {
-  width: 520px;
+  width: 518px;
   height: 40px;
   margin: 0;
-  padding: 10px;
+  padding: 14px;
+  font-size: 1.2em;
+  font-family: "Open Sans";
+  font-weight: 400;
+  color: #dc6817;
   float: left; }
 
 #add-button {
@@ -117,6 +124,35 @@ i {
   background-color: inherit;
   border: 0.5px solid #c8c8c8;
   float: right; }
+
+li {
+  height: 40px;
+  width: 100%;
+  padding-left: 50px;
+  background-color: white;
+  border: 0.5px solid #c8c8c8;
+  font-size: 1.2em;
+  font-family: "Open Sans";
+  font-weight: 400;
+  margin: 6px 0;
+  line-height: 40px;
+  text-align: left;
+  clear: both; }
+
+.deleteButton {
+  height: 39px;
+  width: 40px;
+  background-color: rgba(251, 251, 251, 0);
+  border: none;
+  border-left: 0.5px solid #c8c8c8;
+  float: right; }
+
+input:focus {
+  outline: none;
+  border: 2px solid #dc6817; }
+
+body {
+  background-color: #f3f5f6; }
 
 header {
   height: 56px;
@@ -154,7 +190,7 @@ main:after {
   display: block; }
 
 .container {
-  width: 920px;
+  max-width: 920px;
   height: 100vh;
   margin: 60px auto;
   padding: 50px;
@@ -165,7 +201,10 @@ section {
   height: auto;
   width: 600px;
   padding: 30px 0;
-  background-color: #fbfbfb; }
+  background-color: #fbfbfb;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(99, 99, 99, 0.3), 0 6px 16px 0 rgba(99, 99, 99, 0.3); }
 
 footer,
 main:after {

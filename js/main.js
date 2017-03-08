@@ -136,8 +136,9 @@ var view = {
 	},
 
 	createDeleteButton: function () {
+		var faButton = '<i class="fa fa-times" aria-hidden="true"></i>';
 		var deleteButton = document.createElement('button');
-		deleteButton.textContent = 'Delete';
+		deleteButton.innerHTML = faButton;
 		deleteButton.className = 'deleteButton';
 		return deleteButton;
 	},
@@ -150,7 +151,7 @@ var view = {
 
 			var elementClicked = event.target;
 
-			if (elementClicked.className === 'deleteButton') {
+			if (elementClicked.className === 'deleteButton' || 'fa-times') {
 				handlers.deleteTodo(parseInt(elementClicked.parentNode.id));
 			}
 		});
