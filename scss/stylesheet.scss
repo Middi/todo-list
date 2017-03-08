@@ -2,6 +2,7 @@
 @import "colors";
 @import "typography";
 @import "buttons";
+@import "forms";
 
 header {
     height             : 56px;
@@ -42,10 +43,16 @@ main:after {
     height: 100vh;
     margin: 60px auto;
     padding: 50px;
-    background-color: $white;
     text-align: center;
 }
 
+section {
+    margin: 0 auto;
+    height: auto;
+    width: 600px;
+    padding: 30px 0;
+    background-color: $white;
+}
 
 
 

@@ -1,0 +1,43 @@
+// FONTAWESOME STYLES
+
+i {color: $black;}
+
+.toggle-all {    
+    height: 40px;
+    width: 40px;
+    margin: 0;
+    padding: 0;
+    background-color: inherit;
+    border: 0.5px solid $close;
+    float: left;
+}
+
+.add-todo {
+    height: 40px;
+    padding: 0;
+    margin: 10px 0;
+}
+
+#addTodoTextInput {
+    width: 520px;
+    height: 40px;
+    margin: 0;
+    padding: 10px;
+    float: left;
+}
+
+#add-button {
+    height: 40px;
+    width: 40px;
+    margin: 0;
+    padding: 0;
+    background-color: inherit;
+    border: 0.5px solid $close;
+    float: right;
+}
+
+// EDIT BUTTON
+
+.edit {
+    
+}

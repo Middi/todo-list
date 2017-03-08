@@ -13,36 +13,43 @@
 <body>
     <header>
         <nav>
-<h1 class="logo"><span>Todo</span>List</h1>
+            <h1 class="logo"><span>Todo</span>List</h1>
         </nav>
     </header>
     <main>
         <div class="container">
-
-            <div>
-                <button onclick="handlers.toggleAll()">Toggle All</button>
-            </div>
+            <section>
 
 
-            <div>
-                <input id="addTodoTextInput" type="text" placeholder="New Todo" />
 
-                <button onclick="handlers.addTodo()">Add</button>
-            </div>
+                <div class="add-todo">
+                    <button class="toggle-all" onclick="handlers.toggleAll()"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
 
-            <div>
-                <input id="changeTodoPositionInput" type="number" />
-                <input id="changeTodoTextInput" type="text" /><button onclick="handlers.changeTodo()">Change Todo</button>
-            </div>
+                    <input id="addTodoTextInput" type="text" placeholder="New Todo" />
 
-            <div>
-                <input id="toggleCompletedPositionInput" type="number" />
-                <button onclick="handlers.toggleCompleted()">Toggle Completed</button>
-            </div>
+                    <button id="add-button" onclick="handlers.addTodo()"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                </div>
 
-            <ul>
-            </ul>
+                <div class="todos">
+                    <ul>
+                    </ul>
+                </div>
+
+                <div class="edit">
+                    <input id="changeTodoPositionInput" type="number" />
+                    <input id="changeTodoTextInput" type="text" />
+
+                    <button onclick="handlers.changeTodo()">Change Todo</button>
+                </div>
+
+                <div>
+                    <input id="toggleCompletedPositionInput" type="number" />
+                    <button onclick="handlers.toggleCompleted()">Toggle Completed</button>
+                </div>
         </div>
+
+
+        </section>
     </main>
 
     <footer>

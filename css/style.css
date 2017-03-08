@@ -85,6 +85,39 @@ a:hover {
   font-size: 12px;
   color: #fc2d23; }
 
+i {
+  color: #1f1f1f; }
+
+.toggle-all {
+  height: 40px;
+  width: 40px;
+  margin: 0;
+  padding: 0;
+  background-color: inherit;
+  border: 0.5px solid #c8c8c8;
+  float: left; }
+
+.add-todo {
+  height: 40px;
+  padding: 0;
+  margin: 10px 0; }
+
+#addTodoTextInput {
+  width: 520px;
+  height: 40px;
+  margin: 0;
+  padding: 10px;
+  float: left; }
+
+#add-button {
+  height: 40px;
+  width: 40px;
+  margin: 0;
+  padding: 0;
+  background-color: inherit;
+  border: 0.5px solid #c8c8c8;
+  float: right; }
+
 header {
   height: 56px;
   width: 100%;
@@ -125,8 +158,14 @@ main:after {
   height: 100vh;
   margin: 60px auto;
   padding: 50px;
-  background-color: #fbfbfb;
   text-align: center; }
+
+section {
+  margin: 0 auto;
+  height: auto;
+  width: 600px;
+  padding: 30px 0;
+  background-color: #fbfbfb; }
 
 footer,
 main:after {
