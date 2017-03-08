@@ -52,7 +52,7 @@ main:after {
 }
 
 
-section {
+#todo-section {
     margin: 0 auto;
     height: auto;
     width: 600px;
@@ -63,6 +63,10 @@ section {
     box-shadow: 0 4px 8px 0 $shadow, 0 6px 16px 0 $shadow;
 }
 
+
+#edit-section {
+    margin-top: 50px;
+}
 
 // --- FOOTER --- //
 footer,

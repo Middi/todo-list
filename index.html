@@ -18,8 +18,8 @@
     </header>
     <main>
         <div class="container">
-            <section>
-<h2 class="logo"><span>Todo</span>List</h2>
+            <section id="todo-section">
+                <h2 class="logo"><span>Todo</span>List</h2>
 
                 <div class="add-todo">
                     <button class="toggle-all" onclick="handlers.toggleAll()"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
@@ -34,6 +34,12 @@
                     </ul>
                 </div>
 
+
+
+            </section>
+            <section id="edit-section">
+
+
                 <div class="edit">
                     <input id="changeTodoPositionInput" type="number" />
                     <input id="changeTodoTextInput" type="text" />
@@ -45,10 +51,8 @@
                     <input id="toggleCompletedPositionInput" type="number" />
                     <button onclick="handlers.toggleCompleted()">Toggle Completed</button>
                 </div>
+            </section>
         </div>
-
-
-        </section>
     </main>
 
     <footer>
