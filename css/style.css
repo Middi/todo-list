@@ -93,25 +93,29 @@ i {
 
 .toggle-all {
   height: 40px;
-  width: 40px;
+  min-width: 40px;
   margin: 0;
   padding: 0;
   background-color: inherit;
   border: none;
   border-top: 0.5px solid #c8c8c8;
   border-bottom: 0.5px solid #c8c8c8;
+  border-left: 0.5px solid #c8c8c8;
   float: left; }
+  .toggle-all:hover {
+    background-color: #eeeeee; }
 
 .add-todo {
   height: 40px;
+  width: 480px;
   padding: 0;
-  margin: 10px 0;
+  margin: 10px auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
 
 #addTodoTextInput {
-  width: 518px;
+  width: 400px;
   height: 40px;
   margin: 0;
   padding: 14px;
@@ -122,34 +126,38 @@ i {
   color: #dc6817;
   float: left;
   -ms-flex-negative: 1;
-      flex-shrink: 1; }
+      flex-shrink: 1;
+  border-radius: 0; }
 
 #add-button {
   height: 40px;
-  width: 42px;
+  min-width: 42px;
   margin: 0;
   padding: 0;
   background-color: inherit;
   border: none;
   border-top: 0.5px solid #c8c8c8;
   border-bottom: 0.5px solid #c8c8c8;
+  border-right: 0.5px solid #c8c8c8;
   float: right;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease; }
   #add-button:hover {
     background-color: #eeeeee; }
 
+.todos {
+  margin: 60px 0; }
+
 li {
   height: 40px;
-  width: 100%;
+  width: 480px;
   padding-left: 50px;
   background-color: white;
-  border-top: 0.5px solid #c8c8c8;
-  border-bottom: 0.5px solid #c8c8c8;
+  border: 0.5px solid #c8c8c8;
   font-size: 1.2em;
   font-family: "Open Sans";
   font-weight: 400;
-  margin: 6px 0;
+  margin: 6px auto;
   line-height: 40px;
   text-align: left;
   clear: both; }
@@ -179,9 +187,6 @@ li {
   .deleteButton:hover {
     background-color: #eeeeee; }
 
-.todos {
-  margin-bottom: 40px; }
-
 #changeTodoPositionInput {
   width: 40px; }
 
@@ -190,6 +195,26 @@ input[type]:focus,
 textarea:focus {
   outline: none;
   border: 1px solid #dc6817 !important; }
+
+input:hover::-webkit-input-placeholder {
+  color: #dc6817;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease; }
+
+input:hover:-moz-placeholder {
+  color: #dc6817;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease; }
+
+input:hover::-moz-placeholder {
+  color: #dc6817;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease; }
+
+input:hover:-ms-input-placeholder {
+  color: #dc6817;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease; }
 
 body {
   background-color: #f3f5f6; }
@@ -272,7 +297,7 @@ footer {
   #todo-section {
     width: 100%;
     height: auto;
-    padding: 74px 0 120px;
+    padding: 74px 20px 120px;
     background-color: white; }
   h2 {
     display: none; } }

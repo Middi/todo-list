@@ -5,25 +5,30 @@ i {
 
 .toggle-all {
     height: 40px;
-    width: 40px;
+    min-width: 40px;
     margin: 0;
     padding: 0;
     background-color: inherit;
     border: none;
     border-top: 0.5px solid $close;
     border-bottom: 0.5px solid $close;
+    border-left: 0.5px solid $close;
     float: left;
+    &:hover {
+        background-color: darken($white, 5%);
+    }
 }
 
 .add-todo {
     height: 40px;
+    width: 480px;
     padding: 0;
-    margin: 10px 0;
+    margin: 10px auto;
     display: flex;
 }
 
 #addTodoTextInput {
-    width: 518px;
+    width: 400px;
     height: 40px;
     margin: 0;
     padding: 14px;
@@ -33,43 +38,47 @@ i {
     font-weight: 400;
     color: $brand;
     float: left;
-    flex-shrink: 1; 
+    flex-shrink: 1;
+    border-radius: 0;
 }
 
 #add-button {
     height: 40px;
-    width: 42px;
+    min-width: 42px;
     margin: 0;
     padding: 0;
     background-color: inherit;
     border: none;
     border-top: 0.5px solid $close;
     border-bottom: 0.5px solid $close;
+    border-right: 0.5px solid $close;
     float: right;
     transition: all 0.4s ease;
-
     &:hover {
         background-color: darken($white, 5%);
     }
 }
 
+.todos {
+    margin: 60px 0;
+}
+
 li {
     height: 40px;
-    width: 100%;
+    width: 480px;
     padding-left: 50px;
     background-color: white;
-    border-top: 0.5px solid $close;
-    border-bottom: 0.5px solid $close;
+    border: 0.5px solid $close;
     font-size: 1.2em;
     font-family: "Open Sans";
     font-weight: 400;
-    margin: 6px 0;
+    margin: 6px auto;
     line-height: 40px;
     text-align: left;
     clear: both;
 }
 
-.editButton {    
+.editButton {
     height: 39px;
     width: 40px;
     background-color: rgba( $white, 0);
@@ -78,7 +87,6 @@ li {
     float: right;
     z-index: 1;
     transition: all 0.4s ease;
-
     &:hover {
         background-color: darken($white, 5%);
     }
@@ -92,14 +100,9 @@ li {
     border-left: 0.5px solid $close;
     float: right;
     transition: all 0.4s ease;
-
     &:hover {
         background-color: darken($white, 5%);
     }
-}
-
-.todos {
-    margin-bottom: 40px;
 }
 
 #changeTodoPositionInput {
@@ -111,4 +114,25 @@ input[type]:focus,
 textarea:focus {
     outline: none;
     border: 1px solid $brand !important;
+}
+
+input:hover::-webkit-input-placeholder,
+{
+    color: $brand;
+    transition: all 0.4s ease;
+}
+
+input:hover:-moz-placeholder {
+    color: $brand;
+    transition: all 0.4s ease;
+}
+
+input:hover::-moz-placeholder {
+    color: $brand;
+    transition: all 0.4s ease;
+}
+
+input:hover:-ms-input-placeholder {
+    color: $brand;
+    transition: all 0.4s ease;
 }
