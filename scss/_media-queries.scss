@@ -3,13 +3,17 @@
 
 /* -- BREAK 1 -- */
 
+
 @media only screen and (max-width: 600px) {
 
+.container  {
+    margin: 0px;
+}
 
     #todo-section {
         width: 100%;
         height: auto;
-        padding: 30px 0;
+        padding: 74px 0 120px;
         background-color: white;
     }
 
