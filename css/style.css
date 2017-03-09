@@ -30,8 +30,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/*--------------------------------------*            ADDED BY RICHARD
-\*--------------------------------------*/
+/* Added by Richard */
 * {
   box-sizing: border-box;
   text-rendering: optimizeLegibility;
@@ -41,9 +40,6 @@ table {
 a {
   text-decoration: none; }
 
-/*=============================================
-=                   COLORS                    =
-=============================================*/
 /*=============================================
 =                 TYPOGRAPHY                  =
 =============================================*/
