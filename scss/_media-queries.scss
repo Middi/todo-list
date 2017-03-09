@@ -1,14 +1,12 @@
-/* ----- MEDIA QUERIES ------ */
+/*=============================================
+=                 MEDIA QUERIES               =
+=============================================*/
 
 
 /* -- BREAK 1 -- */
-
-
 @media only screen and (max-width: 600px) {
 
-.container  {
-    margin: 0px;
-}
+.container  {margin: 0px;}
 
     #todo-section {
         width: 100%;
@@ -17,7 +15,5 @@
         background-color: white;
     }
 
-    h2 {
-        display: none;
-    }
+    h2 { display: none;}
 }
